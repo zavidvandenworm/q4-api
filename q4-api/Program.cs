@@ -3,7 +3,6 @@ using dotenv.net;
 using Infrastructure;
 DotEnv.Load();
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 builder.Services.AddInfrastructure();
 builder.Services.AddApplication();

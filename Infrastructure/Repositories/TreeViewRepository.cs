@@ -14,7 +14,7 @@ public class TreeViewRepository
         props.Add("@skip", skip);
         
         var result = await conn.QueryAsync("SELECT * FROM treeview LIMIT @skip, @limit", props);
-
+        conn.Close();
         return result;
     }
 }
