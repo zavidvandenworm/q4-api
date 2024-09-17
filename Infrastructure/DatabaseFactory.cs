@@ -9,7 +9,15 @@ public static class DatabaseFactory
     public static IDbConnection GetConnection()
     {
         var connection = new MySqlConnection(Environment.GetEnvironmentVariable("CONNECTIONSTRING"));
-        connection.Open();
+        try
+        {
+            connection.Open();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
         return connection;
     }
 }
