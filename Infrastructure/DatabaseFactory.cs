@@ -15,7 +15,7 @@ public static class DatabaseFactory
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            Console.WriteLine("Error 029329923923: " + e.Message);
             throw;
         }
         return connection;
