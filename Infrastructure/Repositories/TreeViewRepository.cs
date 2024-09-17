@@ -9,13 +9,14 @@ public class TreeViewRepository
     {
         Console.WriteLine("VERBINDING NU");
         Console.WriteLine("dbstring is " + Environment.GetEnvironmentVariable("CONNECTIONSTRING"));
-        using var conn = DatabaseFactory.GetConnection();
-
+        var conn = DatabaseFactory.GetConnection();
+        Console.WriteLine("verbinding open");
         var props = new DynamicParameters();
         props.Add("@limit", limit);
         props.Add("@skip", skip);
         
         var result = await conn.QueryAsync("SELECT * FROM treeview LIMIT @skip, @limit", props);
+        Console.WriteLine("query uitgevoerd");
         conn.Close();
         return result;
     }
