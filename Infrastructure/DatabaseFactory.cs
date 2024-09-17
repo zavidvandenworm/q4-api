@@ -11,11 +11,13 @@ public static class DatabaseFactory
         var connection = new MySqlConnection(Environment.GetEnvironmentVariable("CONNECTIONSTRING"));
         try
         {
+            // connectie is gelukt
+            Console.WriteLine("Connection to database established");
             connection.Open();
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            Console.WriteLine("Error 029329923923: " + e.Message);
             throw;
         }
         return connection;
