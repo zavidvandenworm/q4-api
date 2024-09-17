@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <InvariantGlobalization>true</InvariantGlobalization>
         <RootNamespace>q4_api</RootNamespace>
+        <RuntimeIdentifiers>linux-x64;win-x64</RuntimeIdentifiers>
     </PropertyGroup>
 
     <ItemGroup>
