@@ -1,0 +1,4 @@
+
+[dependencies]
+apt = ["openssl"]
+nixpkgs = ["openssl"]
