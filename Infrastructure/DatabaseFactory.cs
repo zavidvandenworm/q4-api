@@ -11,6 +11,8 @@ public static class DatabaseFactory
         var connection = new MySqlConnection(Environment.GetEnvironmentVariable("CONNECTIONSTRING"));
         try
         {
+            // connectie is gelukt
+            Console.WriteLine("Connection to database established");
             connection.Open();
         }
         catch (Exception e)
