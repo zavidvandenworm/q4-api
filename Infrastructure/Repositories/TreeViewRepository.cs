@@ -7,6 +7,8 @@ public class TreeViewRepository
 {
     public async Task<object> ListAsync(int skip = 0, int limit = 100)
     {
+        Console.WriteLine("VERBINDING NU");
+        Console.WriteLine("dbstring is " + Environment.GetEnvironmentVariable("CONNECTIONSTRING"));
         using var conn = DatabaseFactory.GetConnection();
 
         var props = new DynamicParameters();
