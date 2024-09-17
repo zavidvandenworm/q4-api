@@ -22,4 +22,10 @@ public class MachineController : ControllerBase
         var results = await _treeViewRepository.ListAsync(dto.Skip, dto.Limit);
         return Ok(results);
     }
+
+    [HttpGet("test")]
+    public IActionResult Test()
+    {
+        return Ok("yahoo");
+    }
 }
