@@ -8,7 +8,7 @@ public static class DatabaseFactory
 {
     public static IDbConnection GetConnection()
     {
-        var connection = new MySqlConnection("Server=156.67.83.101;Port=6203;User=mysql;Database=default;Password=zdZCwqeKfmJOPktwK5X0lbLZMd1jkXALUv59PZ9ozOE43VxHv3Ax9Tet4JdtF4Lf");
+        var connection = new MySqlConnection(Environment.GetEnvironmentVariable("CONNECTIONSTRING"));
         connection.Open();
         return connection;
     }

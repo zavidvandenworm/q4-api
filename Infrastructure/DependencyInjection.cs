@@ -1,6 +1,13 @@
+using Infrastructure.Repositories;
+using Microsoft.Extensions.DependencyInjection;
+
 namespace Infrastructure;
 
-public class DependencyInjection
+public static class DependencyInjection
 {
-    
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+    {
+        services.AddScoped<TreeViewRepository>();
+        return services;
+    }
 }
