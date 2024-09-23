@@ -32,7 +32,7 @@ WORKDIR /app
 COPY --from=build /app/publish .
 
 # Expose the port on which the API will run
-EXPOSE 80
+EXPOSE 8080
 
 # Set the entry point for the container
 ENTRYPOINT ["dotnet", "q4-api.dll"]
