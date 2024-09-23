@@ -21,6 +21,12 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
+// no cors
+app.UseCors(
+    options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+);
+
+
 
 app.UseAuthorization();
 
