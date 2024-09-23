@@ -1,5 +1,5 @@
 # Use the official Microsoft image as a base for the build
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 # Set the working directory inside the container
 WORKDIR /source
@@ -23,7 +23,7 @@ RUN dotnet build ./q4-api/q4-api.csproj -c Release -o /app/build
 RUN dotnet publish ./q4-api/q4-api.csproj -c Release -o /app/publish
 
 # Use the runtime image for final deployment
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 
 # Set the working directory inside the container
 WORKDIR /app
