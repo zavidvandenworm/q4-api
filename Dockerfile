@@ -17,10 +17,10 @@ RUN dotnet restore ./q4-api/q4-api.csproj
 COPY . .
 
 # Build the solution
-RUN dotnet build ./q4-api/q4-api.csproj -c Release -o /app/build
+RUN dotnet build ./q4-api/q4-api.csproj -c Debug -o /app/build
 
 # Publish the app (compiling it for production)
-RUN dotnet publish ./q4-api/q4-api.csproj -c Release -o /app/publish
+RUN dotnet publish ./q4-api/q4-api.csproj -c Debug -o /app/publish
 
 # Use the runtime image for final deployment
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
