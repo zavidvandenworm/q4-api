@@ -6,12 +6,12 @@ namespace q4_api.Controllers;
 
 
 [ApiController]
-[Route("api/pure/")]
-public class MachineController : ControllerBase
+[Route("v1/pure/")]
+public class PureController : ControllerBase
 {
     private readonly TreeViewRepository _treeViewRepository;
 
-    public MachineController(TreeViewRepository treeViewRepository)
+    public PureController(TreeViewRepository treeViewRepository)
     {
         _treeViewRepository = treeViewRepository;
     }
@@ -21,11 +21,5 @@ public class MachineController : ControllerBase
     {
         var results = await _treeViewRepository.ListAsync(dto.Skip, dto.Limit);
         return Ok(results);
-    }
-
-    [HttpGet("test")]
-    public IActionResult Test()
-    {
-        return Ok("yahoo");
     }
 }

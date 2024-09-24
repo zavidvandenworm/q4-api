@@ -1,6 +1,9 @@
+using System.Data;
 using Application;
 using dotenv.net;
 using Infrastructure;
+using MySqlConnector;
+
 DotEnv.Load();
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
