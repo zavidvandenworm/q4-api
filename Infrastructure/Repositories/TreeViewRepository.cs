@@ -15,4 +15,16 @@ public class TreeViewRepository
         var result = await conn.QueryAsync("SELECT * FROM treeview LIMIT @limit OFFSET @skip", props);
         return result;
     }
+
+    // GetByIdAsync
+    public async Task<object> GetByIdAsync(int id)
+    {
+        using var conn = await DatabaseFactory.GetConnection();
+        
+        var props = new DynamicParameters();
+        props.Add("@id", id);
+        
+        var result = await conn.QueryFirstOrDefaultAsync("SELECT * FROM treeview WHERE id = @id", props);
+        return result;
+    }
 }

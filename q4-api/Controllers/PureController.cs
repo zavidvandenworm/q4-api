@@ -22,4 +22,12 @@ public class PureController : ControllerBase
         var results = await _treeViewRepository.ListAsync(dto.Skip, dto.Limit);
         return Ok(results);
     }
+
+    // machine/{id}
+    [HttpGet("machine/{id}")]
+    public async Task<IActionResult> GetMachineById(int id)
+    {
+        var result = await _treeViewRepository.GetByIdAsync(id);
+        return Ok(result);
+    }
 }
