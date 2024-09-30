@@ -1,4 +1,5 @@
 using Dapper;
+using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
 namespace q4_api.Controllers;

@@ -1,6 +1,5 @@
 using Dapper;
-using Infrastructure.Repositories;
-using Microsoft.AspNetCore.Http.HttpResults;
+using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
 namespace q4_api.Controllers;
@@ -34,15 +33,4 @@ public class BoardController : ControllerBase
 
         return Ok(resultsGood);
     }
-
-
-
-
-
-
-
-
-
-
-
 }
