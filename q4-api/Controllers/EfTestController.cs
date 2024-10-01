@@ -68,7 +68,7 @@ public class EfTestController : ControllerBase
 
     [HttpGet("monitor/{board:int}/{port:int}")]
     public async Task<IActionResult> ListMonitoring(int board, int port, DateTime? filterStart = null,
-        DateTime? filterEnd = null)
+        DateTime? filterEnd = null, int skip = 0, int limit = 10)
     {
         if (filterStart == null)
         {
@@ -92,7 +92,7 @@ public class EfTestController : ControllerBase
 
         var data = await _context.MonitoringData202009s
             .Where(m => m.Board == board && m.Port == port && m.Timestamp > filterStart && m.Timestamp < filterEnd)
-            .OrderBy(m => m.Timestamp).ToListAsync();
+            .OrderBy(m => m.Timestamp).Skip(skip).Take(limit).ToListAsync();
 
         return Ok(new PortData
         {
