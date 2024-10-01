@@ -102,6 +102,7 @@ public class EfTestController : ControllerBase
             {
                 Codes = [d.Code, d.Code2],
                 Duration = d.ShotTime,
+                Timestamp = d.Timestamp ?? DateTime.UnixEpoch,
                 Machine = _context.ProductionData.First(p =>
                     filterStart < p.StartDate.ToDateTime(p.StartTime) &&
                     filterEnd > p.EndDate.ToDateTime(p.EndTime)).TreeviewId,
